@@ -1,0 +1,164 @@
+* {
+    font-family: "Nunito", sans-serif;
+}
+
+.body{
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.login-page-container{
+    padding: 0;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.login-top-box{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-top-box-left{
+    padding: 2%;
+    width: 50%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-top-box-right{
+    width: 50%;
+    background-color: goldenrod;
+}
+
+.top-box-left{
+    width: 50%;
+}
+
+.login-top-box-left div h1{
+    color: white;
+    font-size: 40px;
+}
+
+.login-input-container label{
+    color: white;
+    font-size: 12px;
+}
+
+.login-input{
+    border: 2px solid rgb(238, 238, 238);
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    background-color: white;
+    width: 100%;
+}
+
+.login-input label{
+    color: rgb(119, 119, 119);
+    margin-left: 5px 10px;
+    font-size: 12px;
+}
+
+.login-input input{
+    border: unset;
+    height: 23px;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.login-input input:focus-visible{
+    outline: none;
+}
+
+.login-input:focus-within{
+    border: 2px solid goldenrod;
+}
+
+.login-input:focus-within label{
+    color: goldenrod;
+    font-size: 13px;
+}
+
+.login-input-container button {
+    background-color: goldenrod;
+    color: black;
+    height: 50px;
+    padding: 5px 10px;
+    border: unset;
+    border-radius: 3px;
+    margin-top: 10px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.login-top-box-right img{
+    width: 100%;
+    height: 100%;
+}
+
+.horizontal-line-container div{
+    padding: 5px 10px;
+    border: unset;
+    border-radius: 3px;
+    margin-top: 10px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.horizontal-line-container{
+    margin-top: 10%;
+    position: relative;
+    height: 30px;
+}
+
+.horizontal-line-container hr{
+    color: white;
+}
+
+.horizontal-line-container div{
+    background-color: white;
+    position: absolute;
+    color: black;
+    border-radius: 100px;
+    padding: 0 12px 3px;
+    width: 20px;
+    text-align: center;
+    display: inline-block;
+    left: 45%;
+    bottom: 18px;
+}
+
+.alternate-options{
+    margin-top: 20px;
+}
+
+.modified-button button{
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.modified-button .icon{
+    position: absolute;
+    left: 40px;
+    top: 9px;
+}
+
+.modified-button button{
+    border: 1px solid grey;
+    height: 45px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.modified-button .profile-img{
+    position: absolute;
+    right: 40px;
+    top: 9px;
+}
+
