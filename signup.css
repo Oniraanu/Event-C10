@@ -161,3 +161,7 @@
     right: 40px;
     top: 9px;
 }
+
+#signup-button{
+    display: none;
+}

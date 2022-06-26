@@ -1,19 +1,58 @@
 let formContainer = document.getElementsByClassName("signup-input-container")[0]
+let continueButton = document.getElementById("continueButton")
+let registerButton = document.getElementById("registerButton")
+let isPopulated = false
+let formFields = {}
+
+function handleInput(e) {
+    formFields = {...formFields, [e.target.name]: e.target.value}
+}
+
+function registerUser(){
+    if(localStorage.getItem("users")) {
+        let users = JSON.parse(localStorage.getItem("users"))
+        users = [...users, formFields]
+        localStorage.setItem("users", JSON.stringify(users))
+        console.log(users)
+    } else {
+        let users = [formFields]
+        localStorage.setItem("users", JSON.stringify(users))
+        console.log(users)
+    }
+}
+
+document.getElementsByClassName("signup-input")[0].addEventListener("keyup", handleInput)
 
 function createFormElements() {
-    let div = document.createElement("div")
-    div.classList.add("signup-input")
 
-    let label = document.createElement("label")
-    label.textContent = "Password"
+    let fieldsArray = ["First Name", "Last Name", "Password"]
 
-    let input = document.createElement("input")
-    input.setAttribute("type", "password")
-    input.setAttribute("name", "password")
-    input.setAttribute("id", "password")
+    if (!isPopulated) {
 
-    div.appendChild(label)
-    div.appendChild(input)
+        for(let i = 0; i < fieldsArray.length; i++) { 
 
-    formContainer.appendChild(div)
+        let div = document.createElement("div")
+        
+        div.classList.add("signup-input")
+
+        let label = document.createElement("label")
+        label.textContent = fieldsArray[i]
+
+        let input = document.createElement("input")
+        input.addEventListener("keyup", handleInput)
+
+        input.setAttribute("type", fieldsArray[i].split(" ").join("").toLowerCase())
+        input.setAttribute("name", fieldsArray[i].split(" ").join("").toLowerCase())
+        input.setAttribute("id", fieldsArray[i].split(" ").join("").toLowerCase())
+
+        div.appendChild(label)
+        div.appendChild(input)
+
+        formContainer.insertBefore(div, continueButton)
+
+        isPopulated = true
+        continueButton.style.display = "none"
+        registerButton.style.display = "block"
+        }
+    }
 }
