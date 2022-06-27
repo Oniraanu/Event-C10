@@ -26,6 +26,25 @@ function clickHandler() {
         alert("Please enter your details")
         return
     } else {
-        console.log(email, password)
+        if (localStorage.getItem("users")) {
+            let users = JSON.parse(localStorage.getItem("users"))
+            let user;
+            for(let i = 0; i < users.length; i++) {
+                let userObject = users[i]
+                if (userObject.email === email) {
+                    user = userObject
+                    if (user.password === password) {
+                        alert("Welcome to Dekanords Event")
+                        return
+                    } else {
+                        alert("Incorrect password: " + password)
+                        return
+                    }
+                } else {
+                    alert("Register a user")
+                    return
+                }
+            } 
+        }
     }
 }
