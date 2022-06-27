@@ -21,5 +21,11 @@ document.getElementById('password').addEventListener("keyup", (e) => {
 })
 
 function clickHandler() {
-    console.log(userInput)
+    let {email, password} = userInput
+    if (email === "" || password === "") {
+        alert("Please enter your details")
+        return
+    } else {
+        console.log(email, password)
+    }
 }
