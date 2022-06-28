@@ -21,7 +21,7 @@ function registerUser(){
     }
 }
 
-document.getElementsByClassName("signup-input")[0].addEventListener("keyup", handleInput)
+document.getElementsByClassName("signup-input")[0].addEventListener("input", handleInput)
 
 function createFormElements() {
 

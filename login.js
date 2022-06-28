@@ -5,6 +5,16 @@
 //     console.log(password);
 // }
 
+// let userObject = users[i]
+//                 if (userObject.email === email) {
+//                     user = userObject
+//                     if (user.password === password) {
+//                         alert("Welcome to Dekanords Event")
+//                         return
+//                     } else {
+//                         alert("Incorrect password: " + password)
+//                         return
+
 console.log(document)
 
 let userInput = {
@@ -12,11 +22,11 @@ let userInput = {
     password: ""
 }
 
-document.getElementById('email').addEventListener("keyup", (e) => {
+document.getElementById('email').addEventListener("input", (e) => {
     userInput[e.target.name] = e.target.value
 })
 
-document.getElementById('password').addEventListener("keyup", (e) => {
+document.getElementById('password').addEventListener("input", (e) => {
     userInput[e.target.name] = e.target.value
 })
 
@@ -30,21 +40,21 @@ function clickHandler() {
             let users = JSON.parse(localStorage.getItem("users"))
             let user;
             for(let i = 0; i < users.length; i++) {
-                let userObject = users[i]
-                if (userObject.email === email) {
-                    user = userObject
-                    if (user.password === password) {
-                        alert("Welcome to Dekanords Event")
-                        return
-                    } else {
-                        alert("Incorrect password: " + password)
-                        return
-                    }
-                } else {
-                    alert("Register a user")
-                    return
+                if (users[i].email === email) {
+                    user = users[i]
                 }
-            } 
+            }
+            if (Object.keys(user).length > 0) {
+                if (user.password === password) {
+                    alert ("Welcome to Deka-norbs Event")
+                    return
+                } else {
+                    alert ("Please enter a correct password")
+                }
+            } else {
+                alert("Please enter a valid email address")
+                return
+            }         
         }
-    }
+    } 
 }
